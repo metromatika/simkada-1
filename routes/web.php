@@ -37,6 +37,31 @@ Route::group(['middleware' => 'auth'], function () {
         return view('applications/master-data/data-jumlah-DPT');
     })->name('data-jumlah-DPT');
 
+    Route::get('/master-data/tbl-provinsi', function () {
+        return view('applications/master-data/tbl-provinsi');
+    })->name('tbl-provinsi');
+
+    Route::get('/master-data/tbl-kab-kota', function () {
+        return view('applications/master-data/tbl-kab-kota');
+    })->name('tbl-kab-kota');
+
+    Route::get('/master-data/tbl-kecamatan', function () {
+        return view('applications/master-data/tbl-kecamatan');
+    })->name('tbl-kecamatan');
+
+    // Route::get('/master-data/tbl-provinsi', function () {
+    //     $breadcrumb = 'tbl-provinsi';
+    //     return view('applications.master-data.data-jumlah-dpt', compact('breadcrumb'));
+    // })->name('tbl-provinsi');
+
+    // Route::get('/master-data/tbl-kab-kota', function () {
+    //     return view('applications.master-data.data-jumlah-dpt', ['$breadcrumb' => 'tbl-kab-kota']);
+    // })->name('tbl-kab-kota');
+
+    // Route::get('/master-data/tbl-kecamatan', function () {
+    //     return view('applications.master-data.data-jumlah-dpt', ['$breadcrumb' => 'tbl-kecamatan']);
+    // })->name('tbl-kecamatan');
+
     Route::get('pasangan-calon', function () {
         return view('applications/pasangan-calon');
     })->name('pasangan-calon');

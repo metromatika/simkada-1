@@ -44,7 +44,7 @@
             </li>
             {{-- DD Bagian Master Data --}}
             <li class="nav-item">
-                <a data-bs-toggle="collapse" href="#masterData" class="nav-link collapsed {{ Request::is('master-data/data-TPS', 'master-data/data-jumlah-DPT') ? 'active' : '' }}"
+                <a data-bs-toggle="collapse" href="#masterData" class="nav-link collapsed {{ Request::is('master-data/*') ? 'active' : '' }}"
                     aria-controls="applicationsExamples" role="button" aria-expanded="{{ Request::is('master-data/data-TPS', 'master-data/data-jumlah-DPT') ? 'false' : '' }}">
                     <div
                         class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -70,7 +70,7 @@
                     </div>
                     <span class="nav-link-text ms-1">Master Data</span>
                 </a>
-                <div class="collapse {{ Request::is('master-data/data-TPS', 'master-data/data-jumlah-DPT') ? 'show' : '' }}" id="masterData" style="">
+                <div class="collapse {{ Request::is('master-data/*') ? 'show' : '' }}" id="masterData" style="">
                     <ul class="nav ms-4 ps-3">
                         <li class="nav-item">
                             <a class="nav-link {{ Request::is('master-data/data-TPS') ? 'active' : '' }}" href="{{ url('master-data/data-TPS') }}">
@@ -118,7 +118,7 @@
             </li>
             {{-- DD Bagian Tim Relawan --}}
             <li class="nav-item">
-                <a data-bs-toggle="collapse" href="#TimRelawan" class="nav-link collapsed {{ Request::is('tim-relawan/daftar-tim', 'tim-relawan/personil-relawan') ? 'active' : '' }}"
+                <a data-bs-toggle="collapse" href="#TimRelawan" class="nav-link collapsed {{ Request::is('tim-relawan/*') ? 'active' : '' }}"
                     aria-controls="applicationsExamples" role="button" aria-expanded="false">
                     <div
                         class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -301,7 +301,7 @@
             </li>
             {{-- DD Bagian Data Saksi --}}
             <li class="nav-item">
-                <a data-bs-toggle="collapse" href="#DataSaksi" class="nav-link collapsed {{ Request::is('data-saksi/list-daftar-saksi', 'data-saksi/monitoring-saksi') ? 'active' : '' }}"
+                <a data-bs-toggle="collapse" href="#DataSaksi" class="nav-link collapsed {{ Request::is('data-saksi/*') ? 'active' : '' }}"
                     aria-controls="applicationsExamples" role="button" aria-expanded="false">
                     <div
                         class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -345,8 +345,7 @@
             {{-- DD Bagian Manajemen Logistik --}}
             <li class="nav-item">
                 <a data-bs-toggle="collapse" href="#ManajemenLogistik" class="nav-link collapsed
-                    {{ Request::is('manajemen-logistik/daftar-stok-barang', 'manajemen-logistik/pemesanan-barang',
-                    'manajemen-logistik/penerimaan-barang', 'manajemen-logistik/pengeluaran-barang') ? 'active' : '' }}"
+                    {{ Request::is('manajemen-logistik/*') ? 'active' : '' }}"
                     aria-controls="applicationsExamples" role="button" aria-expanded="false">
                     <div
                         class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -395,7 +394,7 @@
             </li>
             {{-- DD Bagian Monitoring Isu Politik --}}
             <li class="nav-item">
-                <a data-bs-toggle="collapse" href="#MonitoringIsuPolitik" class="nav-link collapsed {{ Request::is('monitoring-isu-politik/daftar-isu', 'monitoring-isu-politik/rekapitulasi-isu') ? 'active' : '' }}"
+                <a data-bs-toggle="collapse" href="#MonitoringIsuPolitik" class="nav-link collapsed {{ Request::is('monitoring-isu-politik/*') ? 'active' : '' }}"
                     aria-controls="applicationsExamples" role="button" aria-expanded="false">
                     <div
                         class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">

@@ -54,8 +54,8 @@
                     </td>
                     <td class="text-center">
                         <a href="#" class="mx-3" data-bs-toggle="tooltip"
-                            data-bs-original-title="Detail">
-                            <i class="fas fa-info-circle text-secondary"></i>
+                            data-bs-original-title="Edit">
+                            <i class="fas fa-edit text-secondary"></i>
                         </a>
                         <span>
                             <i class="cursor-pointer fas fa-trash text-secondary"></i>

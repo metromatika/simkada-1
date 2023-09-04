@@ -53,7 +53,7 @@
                         <p class="text-xs font-weight-bold mb-0">53</p>
                     </td>
                     <td class="text-center">
-                        <a href="#" class="mx-3" data-bs-toggle="tooltip"
+                        <a href="tbl-kecamatan" class="mx-3" data-bs-toggle="tooltip"
                             data-bs-original-title="Detail">
                             <i class="fas fa-info-circle text-secondary"></i>
                         </a>

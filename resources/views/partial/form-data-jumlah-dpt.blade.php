@@ -7,14 +7,14 @@
             </div>
             <div class="modal-body">
                 <div class="row justify-content-start align-items-start g-2">
-                    <div class="col-6">
+                    <div class="col">
                         <label for="" class="form-label">Provinsi</label>
                         <select class="form-select" aria-label="Default select example">
                             <option selected>Pilih Provinsi</option>
                             <option value="1">One</option>
                           </select>
                     </div>
-                    <div class="col-6">
+                    <div class="col">
                         <label for="" class="form-label">Kabupaten/Kota</label>
                         <select class="form-select" aria-label="Default select example">
                             <option selected>Pilih Kabupaten/Kota</option>
@@ -23,31 +23,12 @@
                     </div>
                 </div>
                 <div class="row justify-content-start align-items-start g-2">
-                    <div class="col-6">
+                    <div class="col">
                         <label for="" class="form-label">Kecamatan</label>
                         <select class="form-select" aria-label="Default select example">
                             <option selected>Pilih Kecamatan</option>
                             <option value="1">One</option>
                           </select>
-                    </div>
-                    <div class="col-6">
-                        <label for="" class="form-label">Kelurahan</label>
-                        <select class="form-select" aria-label="Default select example">
-                            <option selected>Pilih Kelurahan</option>
-                            <option value="1">One</option>
-                          </select>
-                    </div>
-                </div>
-                <div class="row justify-content-start align-items-start g-2">
-                    <div class="col-12">
-                        <label for="" class="form-label">Jumlah TPS</label>
-                        <input type="text" class="form-control" name="" id="" placeholder="">
-                    </div>
-                </div>
-                <div class="row justify-content-start align-items-start g-2">
-                    <div class="col-12">
-                        <label for="" class="form-label">Keterangan</label>
-                        <input type="text" class="form-control" name="" id="" placeholder="">
                     </div>
                 </div>
             </div>

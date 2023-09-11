@@ -19,7 +19,7 @@
                             <button class="btn bg-gradient-primary btn-sm mb-0 text-lg" data-bs-toggle="modal" data-bs-target="#formDataTPS">+&nbsp; TPS</button>
                         </div>
 
-                        @include('partial.formDataTPS')
+                        @include('partial.form-data-tps')
 
                     </div>
                 </div>

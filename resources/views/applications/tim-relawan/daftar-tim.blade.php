@@ -16,8 +16,9 @@
                         </div>
                     </div>
                     <div class="d-flex align-items-center justify-content-center">
-                        <a href="#" class="btn bg-gradient-primary btn-sm mb-0 text-lg" type="button">+&nbsp; Tim</a>
+                        <a href="#" class="btn bg-gradient-primary btn-sm mb-0 text-lg" type="button" data-bs-toggle="modal" data-bs-target="#formDaftarTim">+&nbsp; Tim</a>
                     </div>
+                    @include('applications.tim-relawan.partial.form-daftar-tim')
                 </div>
             </div>
             <div class="card-body px-0 pt-0 pb-2">

@@ -76,7 +76,7 @@
                             <canvas id="pie-chart" class="chart-canvas" height="300"></canvas>
                         </div>
                     </div>
-                    <h6 class="ms-2 mt-4 mb-0"> Hitung Cepat Kab/Kota Aceh Selatan </h6>
+                    <h6 class="ms-2 mt-4 mb-0"> Hitung Langsung Kab/Kota Aceh Selatan </h6>
                 </div>
             </div>
         </div>

@@ -16,8 +16,9 @@
                         </div>
                     </div>
                     <div class="d-flex align-items-center justify-content-center">
-                        <a href="#" class="btn bg-gradient-primary btn-sm mb-0 text-lg" type="button">+&nbsp; Operator</a>
+                        <a class="btn bg-gradient-primary btn-sm mb-0 text-lg" type="button" data-bs-toggle="modal" data-bs-target="#formOperatorSimkada">+&nbsp; Operator</a>
                     </div>
+                    @include('applications.operator-simkada.partial.form-operator-simkada')
                 </div>
             </div>
             <div class="card-body px-0 pt-0 pb-2">

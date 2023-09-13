@@ -16,7 +16,7 @@
                         </div>
                     </div>
                     <div class="d-flex align-items-center justify-content-center">
-                        <a href="#" class="btn bg-gradient-primary btn-sm mb-0 text-lg" type="button">+&nbsp; Relawan</a>
+                        <a href="#" class="btn bg-gradient-primary btn-sm mb-0 text-lg" type="button">+&nbsp; Pemilih/Pendukung</a>
                     </div>
                 </div>
             </div>

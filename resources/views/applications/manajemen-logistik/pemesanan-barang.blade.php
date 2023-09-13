@@ -16,8 +16,9 @@
                         </div>
                     </div>
                     <div class="d-flex align-items-center justify-content-center">
-                        <a href="#" class="btn bg-gradient-primary btn-sm mb-0 text-lg" type="button">+&nbsp; Pesanan</a>
+                        <a href="#" class="btn bg-gradient-primary btn-sm mb-0 text-lg" data-bs-toggle="modal" data-bs-target="#formPemesananBarang" type="button">+&nbsp; Pemesanan Barang</a>
                     </div>
+                    @include('applications.manajemen-logistik.partial.form-pemesanan-barang')
                 </div>
             </div>
             <div class="card-body px-0 pt-0 pb-2">

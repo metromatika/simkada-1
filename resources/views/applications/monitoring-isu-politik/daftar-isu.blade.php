@@ -7,7 +7,7 @@
             <div class="card-header pb-0">
                 <div class="d-flex flex-row">
                     <div class=" me-auto p-2">
-                        <h5 class="mb-0">Daftar Pengeluaran Barang</h5>
+                        <h5 class="mb-0">Daftar Isu</h5>
                     </div>
                     <div class="ms-md-3 pe-md-3 d-flex align-items-center p-2">
                         <div class="input-group">
@@ -16,7 +16,7 @@
                         </div>
                     </div>
                     <div class="d-flex align-items-center justify-content-center">
-                        <a href="#" class="btn bg-gradient-primary btn-sm mb-0 text-lg" type="button">+&nbsp; Pengeluaran Barang</a>
+                        <a href="#" class="btn bg-gradient-primary btn-sm mb-0 text-lg" type="button">+&nbsp; Daftar Isu</a>
                     </div>
                 </div>
             </div>

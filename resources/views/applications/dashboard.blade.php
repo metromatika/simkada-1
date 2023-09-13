@@ -97,8 +97,8 @@
 
                 <div class="card-body p-3">
                     <h5 class="font-weight-bolder text-center pb-1">Demografi</h5>
-                    <div class="row px-3">
-                        <div class="col-lg-4 shadow-lg border-info rounded-3 border-end border-start px-0 mx-auto">
+                    <div class="row px-3 justify-content-center">
+                        <div class="col-lg-4 shadow-lg border-info rounded-3 border-end border-start px-0 mx-2 w-30">
                             <div class="d-flex flex-column h-100">
                                 <p class="mb-1 pt-3 text-bold text-center">Daftar Pemilih Tetap</p>
                                 <div class="text-center ">
@@ -137,7 +137,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 shadow-lg border-info rounded-3 border-end border-start px-0 mx-auto">
+                        <div class="col-lg-4 shadow-lg border-info rounded-3 border-end border-start px-0 mx-2 w-30">
                             <div class="d-flex flex-column h-100">
                                 <p class="mb-1 pt-3 text-bold text-center">Daftar Pemilih Tetap</p>
                                 <div class="container text-center">
@@ -176,7 +176,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 shadow-lg border-info rounded-3 border-end border-start px-0 mx-auto">
+                        <div class="col-lg-4 shadow-lg border-info rounded-3 border-end border-start px-0 mx-2 w-30">
                             <div class="d-flex flex-column h-100">
                                 <p class="mb-1 pt-3 text-bold text-center">Daftar Pemilih Tetap</p>
                                 <div class="container text-center">

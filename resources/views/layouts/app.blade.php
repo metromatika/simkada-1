@@ -57,6 +57,7 @@
   <script src="../assets/js/plugins/sweetalert.min.js"></script>
   @stack('grafik-quick-count')
   @stack('grafik-real-count')
+  @stack('dashboard')
   <script>
     var win = navigator.platform.indexOf('Win') > -1;
     if (win && document.querySelector('#sidenav-scrollbar')) {

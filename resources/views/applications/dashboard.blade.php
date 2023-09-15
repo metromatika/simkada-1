@@ -228,37 +228,25 @@
                         <h5 class="text-white font-weight-bolder mb-4 pt-2">Count Down Pilkada Serentak 2024</h5>
                         <p class="text-white font-weight-bold">27 November 2024</p>
                         <div class="container-lg">
-                            <div class="row">
+                            <div id="countdown" class="row">
                                 <div class="col">
-                                    <h3 class="text-white text-center">3</h3>
-                                </div>
-                                <div class="col">
-                                    <h3 class="text-white text-center">3</h3>
-                                </div>
-                                <div class="col">
-                                    <h3 class="text-white text-center">3</h3>
-                                </div>
-                                <div class="col">
-                                    <h3 class="text-white text-center">3</h3>
-                                </div>
-                                <div class="col">
-                                    <h3 class="text-white text-center">3</h3>
-                                </div>
-                            </div>
-                            <div class="row mb-0">
-                                <div class="col">
+                                    <h3 id="monthsDisplay" class="text-white text-center">0</h3>
                                     <p class="text-white-50 text-center">Bulan</p>
                                 </div>
                                 <div class="col">
+                                    <h3 id="daysDisplay" class="text-white text-center">0</h3>
                                     <p class="text-white-50 text-center">Hari</p>
                                 </div>
                                 <div class="col">
+                                    <h3 id="hoursDisplay" class="text-white text-center">0</h3>
                                     <p class="text-white-50 text-center">Jam</p>
                                 </div>
                                 <div class="col">
+                                    <h3 id="minutesDisplay" class="text-white text-center">0</h3>
                                     <p class="text-white-50 text-center">Menit</p>
                                 </div>
                                 <div class="col">
+                                    <h3 id="secondsDisplay" class="text-white text-center">0</h3>
                                     <p class="text-white-50 text-center">Detik</p>
                                 </div>
                             </div>
@@ -298,7 +286,8 @@
                             </div>
                         </div>
                         <div class="d-flex align-items-center justify-content-between">
-                            <a href="{{ route('pasangan-calon') }}" type="button" class="btn btn-outline-primary btn-sm mb-0">Selengkapnya</a>
+                            <a href="{{ route('pasangan-calon') }}" type="button"
+                                class="btn btn-outline-primary btn-sm mb-0">Selengkapnya</a>
                             <div class="avatar-group mt-2">
                                 <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip"
                                     data-bs-placement="bottom" title="PDIP">
@@ -349,7 +338,8 @@
                             </div>
                         </div>
                         <div class="d-flex align-items-center justify-content-between">
-                            <a href="{{ route('pasangan-calon') }}" type="button" class="btn btn-outline-primary btn-sm mb-0">Selengkapnya</a>
+                            <a href="{{ route('pasangan-calon') }}" type="button"
+                                class="btn btn-outline-primary btn-sm mb-0">Selengkapnya</a>
                             <div class="avatar-group mt-2">
                                 <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip"
                                     data-bs-placement="bottom" title="PDIP">
@@ -400,7 +390,8 @@
                             </div>
                         </div>
                         <div class="d-flex align-items-center justify-content-between">
-                            <a href="{{ route('pasangan-calon') }}" type="button" class="btn btn-outline-primary btn-sm mb-0">Selengkapnya</a>
+                            <a href="{{ route('pasangan-calon') }}" type="button"
+                                class="btn btn-outline-primary btn-sm mb-0">Selengkapnya</a>
                             <div class="avatar-group mt-2">
                                 <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip"
                                     data-bs-placement="bottom" title="PDIP">
@@ -586,4 +577,154 @@
         </div>
         {{-- @include('layouts.footers.auth.footer') --}}
     </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="card mb-4 mx-4">
+                <div class="card-header p-3 pb-0">
+                    <h6>Relawan Timeline</h6>
+                </div>
+                <div class="card-body p-3">
+                    <div class="chart">
+                        <canvas id="line-chart-gradient" class="chart-canvas" height="300"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
 @endsection
+
+@push('dashboard')
+    <script>
+    // Line chart with gradient
+    var ctx2 = document.getElementById("line-chart-gradient").getContext("2d");
+
+    var gradientStroke1 = ctx2.createLinearGradient(0, 230, 0, 50);
+
+    gradientStroke1.addColorStop(1, 'rgba(203,12,159,0.2)');
+    gradientStroke1.addColorStop(0.2, 'rgba(72,72,176,0.0)');
+    gradientStroke1.addColorStop(0, 'rgba(203,12,159,0)'); //purple colors
+
+    var gradientStroke2 = ctx2.createLinearGradient(0, 230, 0, 50);
+
+    gradientStroke2.addColorStop(1, 'rgba(20,23,39,0.2)');
+    gradientStroke2.addColorStop(0.2, 'rgba(72,72,176,0.0)');
+    gradientStroke2.addColorStop(0, 'rgba(20,23,39,0)'); //purple colors
+
+    new Chart(ctx2, {
+      type: "line",
+      data: {
+        labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+        datasets: [{
+            label: "Dukungan Terkumpul",
+            tension: 0.4,
+            borderWidth: 0,
+            pointRadius: 0,
+            borderColor: "#cb0c9f",
+            borderWidth: 3,
+            backgroundColor: gradientStroke1,
+            fill: true,
+            data: [50, 40, 300, 220, 500, 250, 400, 230, 500],
+            maxBarThickness: 6
+
+          },
+          {
+            label: "Relawan Baru",
+            tension: 0.4,
+            borderWidth: 0,
+            pointRadius: 0,
+            borderColor: "#3A416F",
+            borderWidth: 3,
+            backgroundColor: gradientStroke2,
+            fill: true,
+            data: [30, 90, 40, 140, 290, 290, 340, 230, 400],
+            maxBarThickness: 6
+          },
+        ],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            display: false,
+          }
+        },
+        interaction: {
+          intersect: false,
+          mode: 'index',
+        },
+        scales: {
+          y: {
+            grid: {
+              drawBorder: false,
+              display: true,
+              drawOnChartArea: true,
+              drawTicks: false,
+              borderDash: [5, 5]
+            },
+            ticks: {
+              display: true,
+              padding: 10,
+              color: '#b2b9bf',
+              font: {
+                size: 11,
+                family: "Open Sans",
+                style: 'normal',
+                lineHeight: 2
+              },
+            }
+          },
+          x: {
+            grid: {
+              drawBorder: false,
+              display: false,
+              drawOnChartArea: false,
+              drawTicks: false,
+              borderDash: [5, 5]
+            },
+            ticks: {
+              display: true,
+              color: '#b2b9bf',
+              padding: 10,
+              font: {
+                size: 11,
+                family: "Open Sans",
+                style: 'normal',
+                lineHeight: 2
+              },
+            }
+          },
+        },
+      },
+    });
+
+
+        const targetDate = new Date('2024-11-27 08:00:00').getTime();
+
+        const updateCountdown = () => {
+            const currentDate = new Date().getTime();
+            const timeRemaining = targetDate - currentDate;
+
+            const months = Math.floor(timeRemaining / (1000 * 60 * 60 * 24 * 30));
+            const days = Math.floor((timeRemaining % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+            document.getElementById('monthsDisplay').innerText = months;
+            document.getElementById('daysDisplay').innerText = days;
+            document.getElementById('hoursDisplay').innerText = hours;
+            document.getElementById('minutesDisplay').innerText = minutes;
+            document.getElementById('secondsDisplay').innerText = seconds;
+
+            if (timeRemaining < 0) {
+                document.getElementById('countdown').innerHTML = 'Countdown Selesai';
+            }
+        };
+
+        setInterval(updateCountdown, 1000);
+
+        updateCountdown();
+    </script>
+@endpush

@@ -8,10 +8,11 @@
             <div class="modal-body">
                 <div class="row">
                     <div class="col-3">
-                        <div class="col">
-                            <label for="formFile" class="form-label">Unggah Bukti</label>
-                            <input class="form-control" type="file" id="formFile">
-                        </div>
+                        <form action="/file-upload" class="form-control dropzone" id="dropzone">
+                            <div class="fallback">
+                                <input name="file" type="file" multiple />
+                            </div>
+                        </form>
                     </div>
                     <div class="col-5">
                         <div class="col">
@@ -36,8 +37,9 @@
                         </div>
                         <div class="col">
                             <label for="" class="form-label"> Keterangan </label>
-                            <input type="text" class="form-control" name="" id="" placeholder="">
+                            <textarea class="form-control" name="tes" id="tes" rows="2"></textarea>
                         </div>
+
                         <div class="col">
                             <label for="" class="form-label"> Nama Pelapor </label>
                             <input type="text" class="form-control" name="" id="" placeholder="">

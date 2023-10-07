@@ -3,28 +3,26 @@
 use App\Http\Controllers\ChangePasswordController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\InfoUserController;
+use App\Http\Controllers\RegionController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ResetController;
 use App\Http\Controllers\SessionsController;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Password;
+use App\Http\Controllers\MasterDataController;
 use Illuminate\Support\Facades\Route;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 
 Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/', [HomeController::class, 'home']);
+
+    // provinsi, kab-kota, kecamatan, kelurahan
+    Route::get('/get-provinsi', [RegionController::class, 'getProvinsi'])->name('provinsi.dd');
+    Route::get('/get-kab-kota/{province_id}', [RegionController::class, 'getKabKota'])->name('kabkota.dd');
+    Route::get('/get-kecamatan/{regency_id}', [RegionController::class, 'getKecamatan'])->name('kecamatan.dd');
+    Route::get('/get-kelurahan/{district_id}', [RegionController::class, 'getKelurahan'])->name('kelurahan.dd');
+
+    // simpan form jumlah tps
+    Route::post('/master-data/data-TPS', [MasterDataController::class, 'jumlahTPS']);
+
 	Route::get('dashboard', function () {
 		return view('applications/dashboard');
 	})->name('dashboard');
@@ -48,19 +46,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/master-data/tbl-kecamatan', function () {
         return view('applications/master-data/tbl-kecamatan');
     })->name('tbl-kecamatan');
-
-    // Route::get('/master-data/tbl-provinsi', function () {
-    //     $breadcrumb = 'tbl-provinsi';
-    //     return view('applications.master-data.data-jumlah-dpt', compact('breadcrumb'));
-    // })->name('tbl-provinsi');
-
-    // Route::get('/master-data/tbl-kab-kota', function () {
-    //     return view('applications.master-data.data-jumlah-dpt', ['$breadcrumb' => 'tbl-kab-kota']);
-    // })->name('tbl-kab-kota');
-
-    // Route::get('/master-data/tbl-kecamatan', function () {
-    //     return view('applications.master-data.data-jumlah-dpt', ['$breadcrumb' => 'tbl-kecamatan']);
-    // })->name('tbl-kecamatan');
 
     Route::get('pasangan-calon', function () {
         return view('applications/pasangan-calon');

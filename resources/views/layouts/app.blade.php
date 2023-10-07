@@ -58,6 +58,7 @@
     @stack('grafik-quick-count')
     @stack('grafik-real-count')
     @stack('dashboard')
+    @stack('data-TPS')
     <script>
         var win = navigator.platform.indexOf('Win') > -1;
         if (win && document.querySelector('#sidenav-scrollbar')) {

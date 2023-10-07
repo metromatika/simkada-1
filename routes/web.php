@@ -20,16 +20,17 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/get-kecamatan/{regency_id}', [RegionController::class, 'getKecamatan'])->name('kecamatan.dd');
     Route::get('/get-kelurahan/{district_id}', [RegionController::class, 'getKelurahan'])->name('kelurahan.dd');
 
-    // simpan form jumlah tps
-    Route::post('/master-data/data-TPS', [MasterDataController::class, 'jumlahTPS']);
+    // CRUD jumlah tps
+    Route::post('/master-data/data-TPS/create', [MasterDataController::class, 'createJumlahTPS'])->name('create-TPS');
+    Route::get('/master-data/data-TPS',[MasterDataController::class, 'showJumlahTPS'])->name('read-TPS');
+    Route::get('/master-data/data-TPS/hapus/{id}', [MasterDataController::class, 'deleteJumlahTPS'])->name('delete-TPS');
+    Route::get('/master-data/data-TPS/ubah/{id}', [MasterDataController::class, 'editJumlahTPS'])->name('edit-TPS');
+    Route::put('/master-data/data-TPS/update/{id}', [MasterDataController::class, 'updateJumlahTPS'])->name('update-TPS');
 
 	Route::get('dashboard', function () {
 		return view('applications/dashboard');
 	})->name('dashboard');
 
-    Route::get('/master-data/data-TPS', function () {
-        return view('applications/master-data/data-TPS');
-    })->name('data-TPS');
 
     Route::get('/master-data/data-jumlah-DPT', function () {
         return view('applications/master-data/data-jumlah-DPT');

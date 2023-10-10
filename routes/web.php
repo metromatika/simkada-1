@@ -27,14 +27,21 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/master-data/data-TPS/ubah/{id}', [MasterDataController::class, 'editJumlahTPS'])->name('edit-TPS');
     Route::put('/master-data/data-TPS/update/{id}', [MasterDataController::class, 'updateJumlahTPS'])->name('update-TPS');
 
+    //CRUD jumlah DPT
+    Route::post('/master-data/data-jumlah-DPT/create', [MasterDataController::class, 'createOrUpdateJumlahDPT'])->name('create-update-jumlah-DPT');
+    Route::post('/master-data/data-jumlah-DPT/update', [MasterDataController::class, 'createOrUpdateJumlahDPT'])->name('create-update-jumlah-DPT');
+    Route::get('/master-data/data-jumlah-DPT/edit/{id}',[MasterDataController::class, 'editJumlahDPT'])->name('edit-DPT');
+    Route::get('/master-data/data-jumlah-DPT',[MasterDataController::class, 'showJumlahDPT'])->name('read-DPT');
+    Route::get('/master-data/data-jumlah-DPT/hapus/{id}', [MasterDataController::class, 'deleteJumlahDPT'])->name('delete-DPT');
+
 	Route::get('dashboard', function () {
 		return view('applications/dashboard');
 	})->name('dashboard');
 
 
-    Route::get('/master-data/data-jumlah-DPT', function () {
-        return view('applications/master-data/data-jumlah-DPT');
-    })->name('data-jumlah-DPT');
+    // Route::get('/master-data/data-jumlah-DPT', function () {
+    //     return view('applications/master-data/data-jumlah-DPT');
+    // })->name('data-jumlah-DPT');
 
     Route::get('/master-data/tbl-provinsi', function () {
         return view('applications/master-data/tbl-provinsi');

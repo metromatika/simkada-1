@@ -68,13 +68,11 @@
                                             <p class="text-xs font-weight-bold mb-0">{{ $item->keterangan }}</p>
                                         </td>
                                         <td class="text-center">
-                                            <a href="{{ route('edit-TPS', ['id' => $item->id]) }}" class="mx-3" id="edit-btn"
-                                                data-bs-original-title="Edit TPS" data-village="{{ $item->village }}"
-                                                data-jumlah-tps="{{ $item->jumlah_tps }}"
-                                                data-keterangan="{{ $item->keterangan }}" data-bs-toggle="modal"
+                                            <a href="{{ route('edit-TPS', ['id' => $item->id]) }}" class="mx-3"
+                                                id="edit-btn" data-bs-toggle="modal"
                                                 data-bs-target="#formDataTPS">
                                                 <i class="fas fa-user-edit text-secondary"></i>
-                                            </a>
+                                             </a>
 
                                             <a href="{{ route('delete-TPS', ['id' => $item->id]) }}" class="mx-3"
                                                 data-bs-toggle="tooltip" data-bs-original-title="Delete TPS">
@@ -92,23 +90,3 @@
     </div>
     </div>
 @endsection
-
-@push('data-TPS')
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
-<script>
-
-$(document).ready(function () {
-$('body').on('click', '#edit-btn', function (event) {
-    event.preventDefault();
-    var id = $(this).data('id');
-    $.get('/master-data/data-TPS/hapus/' + id, function (data) {
-        //  $('#userCrudModal').html("Edit category");
-         $('#submit').val("Edit category");
-         $('#formDataTPS').modal('show');
-         $('#jumlah_tps').val(jumlah_tps);
-         $('#keterangan').val(keterangan);
-     })
-});
-});
-</script>
-@endpush

@@ -57,20 +57,21 @@
             </thead>
             <tbody>
                 <tr>
+                    @foreach ($jumlah_dpt as $dpt)
                     <td class="text-center">
-                        <p class="text-xs font-weight-bold mb-0">1.</p>
+                        <p class="text-xs font-weight-bold mb-0"></p>
                     </td>
                     <td class="text-center">
-                        <p class="text-xs font-weight-bold mb-0">Lalang</p>
+                        <p class="text-xs font-weight-bold mb-0">{{ $item->village->name }}</p>
                     </td>
                     <td class="text-center">
-                        <p class="text-xs font-weight-bold mb-0">13</p>
+                        <p class="text-xs font-weight-bold mb-0">{{ $item->dpt_l }}</p>
                     </td>
                     <td class="text-center">
-                        <p class="text-xs font-weight-bold mb-0">40</p>
+                        <p class="text-xs font-weight-bold mb-0">{{ $item->dpt_p }}</p>
                     </td>
                     <td class="text-center">
-                        <p class="text-xs font-weight-bold mb-0">53</p>
+                        <p class="text-xs font-weight-bold mb-0">{{ $item->dpt_jumlah }}</p>
                     </td>
                     <td class="text-center">
                         <a href="#" class="mx-3" data-bs-toggle="tooltip"
@@ -81,6 +82,7 @@
                             <i class="cursor-pointer fas fa-trash text-secondary"></i>
                         </span>
                     </td>
+                    @endforeach
                 </tr>
             </tbody>
         </table>

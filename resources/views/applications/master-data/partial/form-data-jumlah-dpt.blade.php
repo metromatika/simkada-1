@@ -1,71 +1,33 @@
-<div class="modal fade" id="formDataTPS" tabindex="-1" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
-    <div class="modal-dialog modal-xl modal-dialog-scrollable modal-dialog-centered modal" role="document">
+<div class="modal fade" id="formDataDPT" tabindex="-1" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+    <div class="modal-dialog modal-md modal-dialog-scrollable modal-dialog-centered modal" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="modalTitleId">Form DPT Manual</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <div class="row">
-                    <div class="col-md-5">
+                <form method="POST" action="{{ route('create-update-jumlah-DPT', ['id' => $dpt->id ?? null]) }}">
+                    @csrf
+                    <div class="modal-body">
                         @component('components._form-regions')
                         @endcomponent
-                    </div>
-                    <div class="col-md-7">
-                        <h5 class="text-sm">JUMLAH DPT PER KELURAHAN / DESA</h5>
-                        <div class="table-responsive p-0">
-                            <table class="table align-items-center mb-0">
-                                <thead>
-                                    <tr>
-                                        <th
-                                            class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                            No.
-                                        </th>
-                                        <th
-                                            class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                            KELURAHAN / DESA
-                                        </th>
-                                        <th
-                                            class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                            L
-                                        </th>
-                                        <th
-                                            class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                            P
-                                        </th>
-                                        <th
-                                            class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                            Total
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="text-center">
-                                            <p class="text-xs font-weight-bold mb-0">1.</p>
-                                        </td>
-                                        <td class="text-center">
-                                            <p class="text-xs font-weight-bold mb-0">KEUDE BAKONGAN</p>
-                                        </td>
-                                        <td class="text-center">
-                                            <p class="text-xs font-weight-bold mb-0">3</p>
-                                        </td>
-                                        <td class="text-center">
-                                            <p class="text-xs font-weight-bold mb-0">40</p>
-                                        </td>
-                                        <td class="text-center">
-                                            <p class="text-xs font-weight-bold mb-0">43</p>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+
+                        <div class="row justify-content-start align-items-start g-2">
+                            <div class="col-12">
+                                <label for="dpt_l" class="form-label">L (orang)</label>
+                                <input type="number" class="form-control" name="dpt_l" id="dpt_l" placeholder="Data DPT (L)">
+                            </div>
+                            <div class="col-12">
+                                <label for="dpt_p" class="form-label">P (orang)</label>
+                                <input type="number" class="form-control" name="dpt_p" id="dpt_p"placeholder="Data DPT (P)">
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                <button type="button" class="btn btn-primary">Simpan</button>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                        <button type="submit" class="btn btn-primary" id="btn-edit">Simpan</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

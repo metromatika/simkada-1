@@ -6,20 +6,18 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Village;
 
-class TPS extends Model
+class JumlahDPT extends Model
 {
     use HasFactory;
     protected $primaryKey = 'id';
-    protected $table = 'tps';
+    protected $table = 'jumlah_dpt';
     protected $fillable = [
         'village_id',
-        'jumlah_tps',
-        'keterangan',
+        'dpt_l',
+        'dpt_l',
+        'jumlah_dpt',
     ];
-
-    // Definisikan relasi dengan Village
-    public function village()
-    {
+    public function village() {
         return $this->belongsTo(Village::class, 'village_id');
     }
 }

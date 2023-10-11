@@ -7,7 +7,7 @@
             <div class="card-header pb-0">
                 <div class="d-flex flex-row">
                     <div class=" me-auto p-2">
-                        <h5 class="mb-0">Daftar Tim</h5>
+                        <h5 class="mb-0">Data DPT</h5>
                     </div>
                     <div class="ms-md-3 pe-md-3 d-flex align-items-center p-2">
                         <div class="input-group">
@@ -21,23 +21,24 @@
                 </div>
             </div>
             <div class="card-body px-0 pt-0 pb-2">
-                <div class="row justify-content-start align-items-start gx-2 mt-3">
-                    <div class="col">
+                <div class="row justify-content-start align-items-start gx-2 mt-3 ms-4">
+                    <div class="col-auto">
                         <div class="d-flex align-items-center justify-content-center me-2">
                             <a href="#" class="btn bg-gradient-info btn-sm mb-0 text-sm" type="button"><i class="fas fa-file-download pe-2 text-lg"></i>DPT</a>
                         </div>
                     </div>
-                    <div class="col">
+                    <div class="col-auto">
                         <div class="d-flex align-items-center justify-content-center">
                             <a href="#" class="btn bg-gradient-dark btn-sm mb-0 text-sm" type="button"><i class="fas fa-file-download pe-2 text-lg"></i>Template DPT</a>
                         </div>
                     </div>
-                    <div class="col">
+                    <div class="col-auto">
                         <div class="d-flex align-items-center justify-content-center">
                             <a href="#" class="btn bg-gradient-success btn-sm mb-0 text-sm" type="button"><i class="fas fa-file-import pe-2 text-lg"></i>Import DPT</a>
                         </div>
                     </div>
                 </div>
+
                 <div class="table-responsive p-0">
                     <table class="table align-items-center mb-0">
                         <thead>

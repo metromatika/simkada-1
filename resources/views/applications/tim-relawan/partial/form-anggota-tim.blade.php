@@ -65,6 +65,7 @@
                             <option selected>Pilih Agama...</option>
                             <option value="Islam">Islam</option>
                             <option value="Kristen">Kristen</option>
+                            <option value="Katolik">Katolik</option>
                             <option value="Hindu">Hindu</option>
                             <option value="Buddha">Buddha</option>
                         </select>
@@ -96,21 +97,21 @@
                             <div class="mb-3">
                                 <label for="tps" class="form-label">TPS</label>
                                 <input type="text" class="form-control" name="tps" id="tps"
-                                    placeholder="TPS">
+                                    placeholder="TPS (000)">
                             </div>
                         </div>
                         <div class="col">
                             <div class="mb-3">
                                 <label for="rt" class="form-label">RT</label>
                                 <input type="text" class="form-control" name="rt" id="rt"
-                                    placeholder="RT">
+                                    placeholder="RT (000)">
                             </div>
                         </div>
                         <div class="col">
                             <div class="mb-3">
                                 <label for="rw" class="form-label">RW</label>
                                 <input type="text" class="form-control" name="rw" id="rw"
-                                    placeholder="RW">
+                                    placeholder="RW (000)">
                             </div>
                         </div>
                     </div>

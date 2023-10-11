@@ -10,24 +10,15 @@
                 <div class="modal-body">
                     @component('components._form-regions')
                     @endcomponent
-
                     <div class="row justify-content-start align-items-start g-2">
-                        <div class="col-12">
-                            <label for="jumlah_tps" class="form-label">Jumlah TPS</label>
-                            <input type="text" class="form-control" name="jumlah_tps" id="jumlah_tps"
-                                placeholder="Jumlah TPS">
-                        </div>
+                        <x-input col="12" for_name_id="jumlah_tps" content="Jumlah TPS" type="text" placeholder="Jumlah TPS"></x-input>
                     </div>
                     <div class="row justify-content-start align-items-start g-2">
-                        <div class="col-12">
-                            <label for="keterangan" class="form-label">Keterangan</label>
-                            <input type="text" class="form-control" name="keterangan" id="keterangan"
-                                placeholder="Keterangan">
-                        </div>
+                        <x-input col="12" for_name_id="keterangan" content="Keterangan" type="text" placeholder="Keterangan"></x-input>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                    <button type="close" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
                     <button type="submit" class="btn btn-primary" id="btn-edit">Simpan</button>
                 </div>
             </form>

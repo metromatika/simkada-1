@@ -275,6 +275,15 @@ table {
   caption-side: bottom;
   border-collapse: collapse;
 }
+.dataTable-selector {
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+    background-color:#fff;
+    border-radius:.5rem!important;
+    padding:.5rem .75rem!important;
+    text-align:center
+}
 
 caption {
   padding-top: 0.5rem;

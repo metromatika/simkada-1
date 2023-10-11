@@ -26,8 +26,9 @@
     <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
     <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
     <!-- CSS Files -->
-    <link id="pagestyle" href="../assets/css/soft-ui-dashboard.css?v=1.0.3" rel="stylesheet" />
+    <link id="pagestyle" href="../assets/css/soft-ui-dashboard.css?v=1.0.4" rel="stylesheet" />
     <link id="pagestyle" href="../assets/css/soft-ui-dashboard.min.css" rel="stylesheet" />
+    {{-- <link id="pagestyle" href="../assets/css/soft-ui-dashboard.min.css.map" rel="stylesheet" /> --}}
 </head>
 
 <body
@@ -54,6 +55,7 @@
     <script src="../assets/js/plugins/dropzone.min.js"></script>
     <script src="../assets/js/plugins/chartjs.min.js"></script>
     <script src="../assets/js/plugins/sweetalert.min.js"></script>
+    <script src="../assets/js/plugins/datatables.js"></script>
     <script src="{{ asset('js/form-regions.js') }}"></script>
     @stack('grafik-quick-count')
     @stack('grafik-real-count')

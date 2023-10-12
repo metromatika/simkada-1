@@ -24,7 +24,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/master-data/data-TPS/create', [MasterDataController::class, 'createJumlahTPS'])->name('create-TPS');
     Route::get('/master-data/data-TPS',[MasterDataController::class, 'showJumlahTPS'])->name('read-TPS');
     Route::get('/master-data/data-TPS/hapus/{id}', [MasterDataController::class, 'deleteJumlahTPS'])->name('delete-TPS');
-    Route::get('/master-data/data-TPS/ubah/{id}', [MasterDataController::class, 'editJumlahTPS'])->name('edit-TPS');
     Route::put('/master-data/data-TPS/update/{id}', [MasterDataController::class, 'updateJumlahTPS'])->name('update-TPS');
 
     //CRUD jumlah DPT

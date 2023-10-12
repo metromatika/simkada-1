@@ -2,14 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\JumlahDPT;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\JumlahDPT;
 use App\Models\TPS;
+use Illuminate\Http\Request;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\View\View;
 
 class MasterDataController extends Controller
 {
-    public function createJumlahTPS(Request $request)
+    public function createJumlahTPS(Request $request): RedirectResponse
     {
         $this->validate($request, [
             'jumlah_tps' => 'required|integer',
@@ -24,23 +26,19 @@ class MasterDataController extends Controller
 
         return redirect()->back();
     }
-    public function showJumlahTPS()
+    public function showJumlahTPS(): View
     {
         $tpsData = TPS::get();
-        return view('applications.master-data.data-TPS', ['tpsData' => $tpsData]);
+        return view('applications.master-data.data-tps',compact('tpsData'));
     }
-    public function deleteJumlahTPS($id)
+    public function deleteJumlahTPS($id): RedirectResponse
     {
         $tpsData = TPS::where('id', $id)->delete();
         return redirect()->route('read-TPS');
     }
-    public function editJumlahTPS($id, $editMode = true)
+    public function updateJumlahTPS(Request $request, $id): RedirectResponse
     {
-        $tpsData = TPS::find($id);
-        return view('applications.master-data.data-tps', compact('tpsData', 'editMode'));
-    }
-    public function updateJumlahTPS(Request $request, TPS $tpsData)
-    {
+        $tpsData = TPS::findOrFail($id);
         $tpsData->update([
             'jumlah_tps' => $request->jumlah_tps,
             'keterangan' => $request->keterangan,

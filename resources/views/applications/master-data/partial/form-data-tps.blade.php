@@ -11,10 +11,10 @@
                     @component('components._form-regions')
                     @endcomponent
                     <div class="row justify-content-start align-items-start g-2">
-                        <x-input col="12" for_name_id="jumlah_tps" content="Jumlah TPS" type="text" placeholder="Jumlah TPS"></x-input>
+                        <x-input col="12" for_name_id="jumlah_tps" content="Jumlah TPS" type="text" placeholder="Jumlah TPS"/>
                     </div>
                     <div class="row justify-content-start align-items-start g-2">
-                        <x-input col="12" for_name_id="keterangan" content="Keterangan" type="text" placeholder="Keterangan"></x-input>
+                        <x-input col="12" for_name_id="keterangan" content="Keterangan" type="text" placeholder="Keterangan"/>
                     </div>
                 </div>
                 <div class="modal-footer">

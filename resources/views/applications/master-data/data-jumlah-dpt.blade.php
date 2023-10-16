@@ -69,7 +69,7 @@
                                         <p class="text-xs font-weight-bold mb-0">{{ $dpt->dpt_jumlah }}</p>
                                     </td>
                                     <td class="text-center">
-                                        <a href="{{ route('edit-DPT', ['id' => $dpt->id]) }}" class="mx-3">
+                                        <a href="" class="mx-3">
                                             <i class="fas fa-edit text-secondary"></i>
                                         </a>
 

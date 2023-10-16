@@ -21,17 +21,16 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/get-kelurahan/{district_id}', [RegionController::class, 'getKelurahan'])->name('kelurahan.dd');
 
     // CRUD jumlah tps
-    Route::post('/master-data/data-TPS/create', [MasterDataController::class, 'createJumlahTPS'])->name('create-TPS');
     Route::get('/master-data/data-TPS',[MasterDataController::class, 'showJumlahTPS'])->name('read-TPS');
-    Route::delete('/master-data/data-TPS/hapus/{id}', [MasterDataController::class, 'deleteJumlahTPS'])->name('delete-TPS');
+    Route::post('/master-data/data-TPS/create', [MasterDataController::class, 'createJumlahTPS'])->name('create-TPS');
     Route::put('/master-data/data-TPS/update/{id}', [MasterDataController::class, 'updateJumlahTPS'])->name('update-TPS');
+    Route::delete('/master-data/data-TPS/delete/{id}', [MasterDataController::class, 'deleteJumlahTPS'])->name('delete-TPS');
 
     //CRUD jumlah DPT
-    Route::post('/master-data/data-jumlah-DPT/create', [MasterDataController::class, 'createOrUpdateJumlahDPT'])->name('create-update-jumlah-DPT');
-    Route::post('/master-data/data-jumlah-DPT/update', [MasterDataController::class, 'createOrUpdateJumlahDPT'])->name('create-update-jumlah-DPT');
-    Route::get('/master-data/data-jumlah-DPT/edit/{id}',[MasterDataController::class, 'editJumlahDPT'])->name('edit-DPT');
     Route::get('/master-data/data-jumlah-DPT',[MasterDataController::class, 'showJumlahDPT'])->name('read-DPT');
-    Route::get('/master-data/data-jumlah-DPT/hapus/{id}', [MasterDataController::class, 'deleteJumlahDPT'])->name('delete-DPT');
+    Route::post('/master-data/data-jumlah-DPT/create', [MasterDataController::class, 'createJumlahDPT'])->name('create-jumlah-DPT');
+    Route::put('/master-data/data-jumlah-DPT/update/{id}', [MasterDataController::class, 'updateJumlahDPT'])->name('update-jumlah-DPT');
+    Route::delete('/master-data/data-jumlah-DPT/delete/{id}', [MasterDataController::class, 'deleteJumlahDPT'])->name('delete-DPT');
 
 	Route::get('dashboard', function () {
 		return view('applications/dashboard');

@@ -45,11 +45,8 @@ class MasterDataController extends Controller
         ]);
         return redirect()->route('read-TPS')->with('success', 'Data TPS berhasil diupdate');
     }
-
-    public function createOrUpdateJumlahDPT(Request $request)
+    public function createJumlahDPT(Request $request): RedirectResponse
     {
-        $id = $request->input('id');
-
         $this->validate($request, [
             'dpt_l' => 'required|integer',
             'dpt_p' => 'required|integer',
@@ -59,31 +56,26 @@ class MasterDataController extends Controller
         $dpt_p = $request->dpt_p;
         $dpt_jumlah = $dpt_l + $dpt_p;
 
-        if ($id) {
-            $jumlah_dpt = JumlahDPT::find($id);
-            if (!$jumlah_dpt) {
-                return redirect()->back()->with('error', 'Data tidak ditemukan.');
-            }
-
-            $jumlah_dpt->dpt_l = $dpt_l;
-            $jumlah_dpt->dpt_p = $dpt_p;
-            $jumlah_dpt->dpt_jumlah = $dpt_jumlah;
-            $jumlah_dpt->save();
-            return redirect()->back()->with('success', 'Data DPT berhasil diperbarui.');
-        } else {
-            $jumlah_dpt = new JumlahDPT();
+        $jumlah_dpt = new JumlahDPT();
             $jumlah_dpt->village_id = $request->kelurahan;
             $jumlah_dpt->dpt_l = $dpt_l;
             $jumlah_dpt->dpt_p = $dpt_p;
             $jumlah_dpt->dpt_jumlah = $dpt_jumlah;
             $jumlah_dpt->save();
             return redirect()->back()->with('success', 'Data DPT berhasil ditambahkan.');
-        }
     }
-    public function editJumlahDPT($id)
+    public function updateJumlahDPT(Request $request, $id): RedirectResponse
     {
-        $jumlah_dpt = JumlahDPT::find($id);
-        return view('applications.master-data.partial.e_form-data-jumlah-dpt', compact('jumlah_dpt'));
+        $tpsData = JumlahDPT::findOrFail($id);
+        $dpt_l = $request->dpt_l;
+        $dpt_p = $request->dpt_p;
+        $dpt_jumlah = $dpt_l + $dpt_p;
+        $tpsData->update([
+            'dpt_l' => $request->dpt_l,
+            'dpt_p' => $request->dpt_p,
+            'dpt_jumlah' => $request->dpt_jumlah,
+        ]);
+        return redirect()->route('read-TPS')->with('success', 'Data DPT berhasil diupdate');
     }
     public function showJumlahDPT()
     {

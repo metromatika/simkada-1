@@ -6,7 +6,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form method="POST" action="{{ route('create-update-jumlah-DPT', ['id' => $dpt->id ?? null]) }}">
+                <form method="POST" action="{{ route('create-jumlah-DPT') }}">
                     @csrf
                     <div class="modal-body">
                         @component('components._form-regions')

@@ -24,7 +24,7 @@ class MasterDataController extends Controller
         $tps->keterangan = $request->keterangan;
         $tps->save();
 
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Data TPS Berhasil ditambah!');
     }
     public function showJumlahTPS(): View
     {

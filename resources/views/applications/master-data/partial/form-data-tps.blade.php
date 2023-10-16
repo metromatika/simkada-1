@@ -11,11 +11,19 @@
                     @component('components._form-regions')
                     @endcomponent
                     <div class="row justify-content-start align-items-start g-2">
-                        <x-input col="12" value="" for_name_id="jumlah_tps" content="Jumlah TPS" type="text" placeholder="Jumlah TPS"/>
+                        <x-input col="12" value="" for_name_id="jumlah_tps" content="Jumlah TPS"
+                            type="text" placeholder="Jumlah TPS" />
                     </div>
+                    @error('jumlah_tps')
+                        <p class="text-danger text-xs mt-2">{{ $message }}</p>
+                    @enderror
                     <div class="row justify-content-start align-items-start g-2">
-                        <x-input col="12" value="" for_name_id="keterangan" content="Keterangan" type="text" placeholder="Keterangan"/>
+                        <x-input col="12" value="" for_name_id="keterangan" content="Keterangan"
+                            type="text" placeholder="Keterangan" />
                     </div>
+                    @error('keterangan')
+                        <p class="text-danger text-xs mt-2">{{ $message }}</p>
+                    @enderror
                 </div>
                 <div class="modal-footer">
                     <button type="close" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>

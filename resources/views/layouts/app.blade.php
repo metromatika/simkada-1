@@ -34,18 +34,22 @@
 <body
     class="g-sidenav-show  bg-gray-100 {{ \Request::is('rtl') ? 'rtl' : (Request::is('virtual-reality') ? 'virtual-reality' : '') }} ">
     @auth
+        @if (session()->has('success'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <span class="alert-icon"><i class="ni ni-like-2"></i></span>
+                <span class="alert-text"><strong>Success!</strong> {{ session('success') }} </span>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        @endif
         @yield('auth')
     @endauth
     @guest
         @yield('guest')
     @endguest
 
-    @if (session()->has('success'))
-        <div x-data="{ show: true }" x-init="setTimeout(() => show = false, 4000)" x-show="show"
-            class="position-fixed bg-success rounded right-3 text-sm py-2 px-4">
-            <p class="m-0">{{ session('success') }}</p>
-        </div>
-    @endif
+
     <!--   Core JS Files   -->
     <script src="../assets/js/core/popper.min.js"></script>
     <script src="../assets/js/core/bootstrap.min.js"></script>

@@ -8,7 +8,7 @@
                     <div class="d-flex flex-row">
                         <x-title_table title="Semua TPS" />
                         <div class="d-flex align-items-center justify-content-center">
-                            <x-button_create id_modal="formDataTPS" button_create="TPS"/>
+                            <x-button_create id_modal="formDataTPS" button_create="TPS" />
                         </div>
 
                         @component('applications.master-data.partial.form-data-tps')
@@ -21,29 +21,7 @@
                     </div>
                 </div>
                 <div class="card-body px-0 pt-0 pb-2">
-                    {{-- <x-table.table>
-                        <thead>
-                            <x-table.th content="Provinsi" />
-                            <x-table.th content="Kab/Kota" />
-                            <x-table.th content="Kecamatan" />
-                            <x-table.th content="Kelurahan" />
-                            <x-table.th content="Jumlah TPS" />
-                            <x-table.th content="Keterangan" />
-                        </thead>
-                        <tbody>
-                            @foreach ($tpsData as $item)
-                                <tr>
-                                    <x-table.td content="{{ $item->village->district->regency->province->name }}" />
-                                    <x-table.td content="{{ $item->village->district->regency->name }}" />
-                                    <x-table.td content="{{ $item->village->district->name }}" />
-                                    <x-table.td content="{{ $item->village->name }}" />
-                                    <x-table.td content="{{ $item->jumlah_tps }}" />
-                                    <x-table.td content="{{ $item->keterangan }}" />
-                                </tr>
-                            @endforeach
-                        </tbody>
-                    </x-table.table> --}}
-
+                    @livewire('tabel-data-t-p-s')
                     <div class="table-responsive p-0">
                         <div class="dataTable-wrapper dataTable-loading no-footer sortable searchable fixed-columns">
                             <div class="dataTable-top py-2 px-4">
@@ -78,30 +56,13 @@
                                     <tbody>
                                         @forelse ($tpsData as $item)
                                             <tr>
-                                                <x-table.td content="{{ $item->village->district->regency->province->name }}" />
+                                                <x-table.td
+                                                    content="{{ $item->village->district->regency->province->name }}" />
                                                 <x-table.td content="{{ $item->village->district->regency->name }}" />
                                                 <x-table.td content="{{ $item->village->district->name }}" />
                                                 <x-table.td content="{{ $item->village->name }}" />
                                                 <x-table.td content="{{ $item->jumlah_tps }}" />
                                                 <x-table.td content="{{ $item->keterangan }}" />
-                                                {{-- <td class="text-center text-sm p-0">
-                                                    {{ $item->village->district->regency->province->name }}
-                                                </td>
-                                                <td class="text-center text-sm p-0">
-                                                    {{ $item->village->district->regency->name }}
-                                                </td>
-                                                <td class="text-center text-sm p-0">
-                                                    {{ $item->village->district->name }}
-                                                </td>
-                                                <td class="text-center text-sm p-0">
-                                                    {{ $item->village->name }}
-                                                </td>
-                                                <td class="text-center text-sm p-0">
-                                                    {{ $item->jumlah_tps }}
-                                                </td>
-                                                <td class="text-center text-sm p-0">
-                                                    {{ $item->keterangan }}
-                                                </td> --}}
                                                 <td class="text-center p-0">
                                                     <form action="{{ route('delete-TPS', $item->id) }}" method="POST">
                                                         @csrf
@@ -164,9 +125,6 @@
                                     </ul>
                                 </div>
                             </div>
-
-
-
                         </div>
                     </div>
                 </div>

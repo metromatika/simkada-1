@@ -28,6 +28,7 @@
     <!-- CSS Files -->
     <link id="pagestyle" href="../assets/css/soft-ui-dashboard.css?v=1.0.4" rel="stylesheet" />
     <link id="pagestyle" href="../assets/css/soft-ui-dashboard.min.css" rel="stylesheet" />
+    @laravelViewsStyles
     {{-- <link id="pagestyle" href="../assets/css/soft-ui-dashboard.min.css.map" rel="stylesheet" /> --}}
 </head>
 
@@ -61,6 +62,7 @@
     <script src="../assets/js/plugins/sweetalert.min.js"></script>
     <script src="../assets/js/plugins/datatables.js"></script>
     <script src="{{ asset('js/form-regions.js') }}"></script>
+    @laravelViewsScripts
     @stack('grafik-quick-count')
     @stack('grafik-real-count')
     @stack('dashboard')

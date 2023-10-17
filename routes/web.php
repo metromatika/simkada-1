@@ -8,6 +8,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ResetController;
 use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\MasterDataController;
+use App\Http\Livewire\TabelDataTPS;
 use Illuminate\Support\Facades\Route;
 
 Route::group(['middleware' => 'auth'], function () {
@@ -22,6 +23,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     // CRUD jumlah tps
     Route::get('/master-data/data-TPS',[MasterDataController::class, 'showJumlahTPS'])->name('read-TPS');
+    Route::get('/tabel-data-tps', TabelDataTPS::class);
     Route::post('/master-data/data-TPS/create', [MasterDataController::class, 'createJumlahTPS'])->name('create-TPS');
     Route::put('/master-data/data-TPS/update/{id}', [MasterDataController::class, 'updateJumlahTPS'])->name('update-TPS');
     Route::delete('/master-data/data-TPS/delete/{id}', [MasterDataController::class, 'deleteJumlahTPS'])->name('delete-TPS');

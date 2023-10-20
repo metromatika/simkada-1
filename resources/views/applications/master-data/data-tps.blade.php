@@ -22,7 +22,7 @@
                 </div>
                 <div class="card-body px-0 pt-0 pb-2">
                     @livewire('tabel-data-t-p-s')
-                    <div class="table-responsive p-0">
+                    {{-- <div class="table-responsive p-0">
                         <div class="dataTable-wrapper dataTable-loading no-footer sortable searchable fixed-columns">
                             <div class="dataTable-top py-2 px-4">
                                 <div class="dataTable-dropdown ps-3">
@@ -126,7 +126,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>

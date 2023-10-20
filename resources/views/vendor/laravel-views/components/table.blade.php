@@ -67,7 +67,7 @@ props:
 
               {{-- Renders all the actions row --}}
               @if (count($actionsByRow) > 0)
-                <td class="text-center p-0">
+                <td class="text-center px-3 py-1">
                     <x-lv-actions :actions="$actionsByRow" :model="$item" />
                 </td>
               @endif

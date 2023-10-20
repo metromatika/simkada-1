@@ -14,7 +14,7 @@ UI components used:
 
     {{-- Actions on the left --}}
     <div class="dataTable-dropdown">
-        <x-lv-loading class="" wire:loading />
+        <x-lv-loading class="mb-0" wire:loading />
 
         {{-- Bulk actions --}}
         <div>

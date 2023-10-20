@@ -28,7 +28,7 @@
     <!-- CSS Files -->
     <link id="pagestyle" href="../assets/css/soft-ui-dashboard.css?v=1.0.4" rel="stylesheet" />
     <link id="pagestyle" href="../assets/css/soft-ui-dashboard.min.css" rel="stylesheet" />
-    {{-- @laravelViewsStyles --}}
+    @laravelViewsStyles('laravel-views.css')
     {{-- <link id="pagestyle" href="../assets/css/soft-ui-dashboard.min.css.map" rel="stylesheet" /> --}}
 </head>
 

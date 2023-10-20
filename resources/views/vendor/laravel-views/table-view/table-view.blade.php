@@ -29,8 +29,50 @@ UI components used:
         @endif
 
         {{-- Paginator, loading indicator and totals --}}
-        <div class="p-4">
-            {{ $items->links() }}
+        <div class="dataTable-bottom pt-2 pb-1 d-flex justify-content-between align-items-center">
+            <div class="dataTable-info">
+                Showing {{ $items->firstItem() }} to {{ $items->lastItem() }} of {{ $items->total() }} entries
+            </div>
+            <div class="pagination-container">
+                <ul class="pagination pagination-primary justify-content-center">
+                    @if ($items->onFirstPage())
+                        <li class="page-item disabled" aria-disabled="true" aria-label="@lang('pagination.previous')">
+                            <span class="page-link" aria-hidden="true">
+                                <i class="fa fa-angle-double-left" aria-hidden="true"></i>
+                            </span>
+                        </li>
+                    @else
+                        <li class="page-item">
+                            <a class="page-link" href="{{ $items->previousPageUrl() }}" rel="prev" aria-label="@lang('pagination.previous')">
+                                <span aria-hidden="true"><i class="fa fa-angle-double-left" aria-hidden="true"></i></span>
+                            </a>
+                        </li>
+                    @endif
+            
+                    {{-- Array Of Links --}}
+                    @if ($items->lastPage() > 1)
+                        @for ($i = 1; $i <= $items->lastPage(); $i++)
+                            <li class="{{ $items->currentPage() == $i ? 'active' : '' }} page-item">
+                                <a href="{{ $items->url($i) }}" class="page-link">{{ $i }}</a>
+                            </li>
+                        @endfor
+                    @endif
+            
+                    @if ($items->hasMorePages())
+                        <li class="page-item">
+                            <a class="page-link" href="{{ $items->nextPageUrl() }}" rel="next" aria-label="@lang('pagination.next')">
+                                <span aria-hidden="true"><i class="fa fa-angle-double-right" aria-hidden="true"></i></span>
+                            </a>
+                        </li>
+                    @else
+                        <li class="page-item disabled" aria-disabled="true" aria-label="@lang('pagination.next')">
+                            <span class="page-link" aria-hidden="true">
+                                <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                            </span>
+                        </li>
+                    @endif
+                </ul>
+            </div>
         </div>
-    </div>
+        
 </x-lv-layout>

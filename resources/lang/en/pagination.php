@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'previous' => '&laquo; Previous',
-    'next' => 'Next &raquo;',
+    // 'previous' => '<span aria-hidden="true"><i class="fa fa-angle-double-left text-primary" aria-hidden="true"></i></span>',
+    // 'next' => '<span aria-hidden="true"><i class="fa fa-angle-double-right text-primary" aria-hidden="true"></i></span>',
 
 ];

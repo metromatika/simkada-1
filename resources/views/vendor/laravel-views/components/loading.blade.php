@@ -1,3 +1,6 @@
-<span {{ $attributes->merge(['class' => 'animate-spin spinner-border text-primary']) }}>
-  {!! UI::icon('loader', '', 'text-gray-500') !!}
+<span {{ $attributes->merge(['class' => 'animate-spin']) }}>
+  {{-- {!! UI::icon('spinner', '', 'text-primary') !!} --}}
+  <i class="spinner text-primary"></i>
 </span>
+{{-- <span class=" "></span> --}}
+{{-- {!! UI::icon('', '', '') !!} --}}

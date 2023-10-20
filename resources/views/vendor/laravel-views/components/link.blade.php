@@ -6,6 +6,6 @@ You can customize all the html and css classes but YOU MUST KEEP THE BLADE AND L
 --}}
 @props(['to' => '', 'title' => ''])
 
-<a href="{{ $to }}" class="{{ variants('links.default') }}">
+<a href="{{ $to }}" class="text-primary">
   {{ $title }}
 </a>

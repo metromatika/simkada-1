@@ -20,7 +20,7 @@ props:
             @endif
             {{-- Renders all the headers --}}
             @foreach ($headers as $header)
-              <th class="text-center text-uppercase text-dark text-xs font-weight-bolder opacity-7 p-0" {{ is_object($header) && ! empty($header->width) ? 'width=' . $header->width . '' : '' }}>
+              <th class="text-center text-uppercase text-dark text-xs font-weight-bolder opacity-7 p-2" {{ is_object($header) && ! empty($header->width) ? 'width=' . $header->width . '' : '' }}>
                 @if (is_string($header))
                   {{ $header }}
                 @else
@@ -60,7 +60,7 @@ props:
               @endif
               {{-- Renders all the content cells --}}
               @foreach ($view->row($item) as $column)
-                <td class="text-center text-sm">
+                <td class="text-center text-sm px-3 py-2 w-100 h-100">
                   {!! $column !!}
                 </td>
               @endforeach

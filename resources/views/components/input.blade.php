@@ -1,4 +1,4 @@
-@props(['class', 'for_name_id', 'content', 'placeholder', 'type', 'value'])
+@props(['class'=>'', 'for_name_id', 'content', 'placeholder', 'type', 'value'])
 
 <div class="{{ $class }} @error($for_name_id) has-danger @enderror">
     <label for="{{ $for_name_id }}" class="form-label mb-0">{{ $content }}</label>

@@ -10,6 +10,7 @@ use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\MasterDataController;
 use App\Http\Controllers\TimRelawanController;
 use App\Http\Livewire\TabelDataTPS;
+use App\Http\Livewire\DataJumlahDpt;
 use Illuminate\Support\Facades\Route;
 
 Route::group(['middleware' => 'auth'], function () {
@@ -30,6 +31,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::delete('/master-data/data-TPS/delete/{id}', [MasterDataController::class, 'deleteJumlahTPS'])->name('delete-TPS');
 
     //CRUD jumlah DPT
+    Route::get('/data-jumlah-DPT', DataJumlahDpt::class);
     Route::get('/master-data/data-jumlah-DPT',[MasterDataController::class, 'showJumlahDPT'])->name('read-DPT');
     Route::post('/master-data/data-jumlah-DPT/create', [MasterDataController::class, 'createJumlahDPT'])->name('create-jumlah-DPT');
     Route::put('/master-data/data-jumlah-DPT/update/{id}', [MasterDataController::class, 'updateJumlahDPT'])->name('update-jumlah-DPT');

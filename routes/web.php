@@ -8,6 +8,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ResetController;
 use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\MasterDataController;
+use App\Http\Controllers\TimRelawanController;
 use App\Http\Livewire\TabelDataTPS;
 use Illuminate\Support\Facades\Route;
 
@@ -33,6 +34,12 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/master-data/data-jumlah-DPT/create', [MasterDataController::class, 'createJumlahDPT'])->name('create-jumlah-DPT');
     Route::put('/master-data/data-jumlah-DPT/update/{id}', [MasterDataController::class, 'updateJumlahDPT'])->name('update-jumlah-DPT');
     Route::delete('/master-data/data-jumlah-DPT/delete/{id}', [MasterDataController::class, 'deleteJumlahDPT'])->name('delete-DPT');
+
+    //CRUD Daftar Tim
+    Route::post('/tim-relawan/daftar-tim/create', [TimRelawanController::class, 'createTim'])->name('create-tim');
+
+    //CRUD Daftar Tim
+    Route::post('/tim-relawan/personil-relawan/create', [TimRelawanController::class, 'createAnggotaTim'])->name('create-anggota');
 
 	Route::get('dashboard', function () {
 		return view('applications/dashboard');
@@ -192,3 +199,9 @@ Route::group(['middleware' => 'guest'], function () {
 Route::get('/login', function () {
     return view('session/login-session');
 })->name('login');
+
+    // provinsi, kab-kota, kecamatan, kelurahan
+    Route::get('/get-provinsi', [RegionController::class, 'getProvinsi'])->name('provinsi.dd');
+    Route::get('/get-kab-kota/{province_id}', [RegionController::class, 'getKabKota'])->name('kabkota.dd');
+    Route::get('/get-kecamatan/{regency_id}', [RegionController::class, 'getKecamatan'])->name('kecamatan.dd');
+    Route::get('/get-kelurahan/{district_id}', [RegionController::class, 'getKelurahan'])->name('kelurahan.dd');

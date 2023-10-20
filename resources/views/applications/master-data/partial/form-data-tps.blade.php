@@ -11,14 +11,14 @@
                     @component('components._form-regions')
                     @endcomponent
                     <div class="row justify-content-start align-items-start g-2">
-                        <x-input col="12" value="" for_name_id="jumlah_tps" content="Jumlah TPS"
+                        <x-input class="" value="" for_name_id="jumlah_tps" content="Jumlah TPS"
                             type="text" placeholder="Jumlah TPS" />
                     </div>
                     @error('jumlah_tps')
                         <p class="text-danger text-xs mt-2">{{ $message }}</p>
                     @enderror
                     <div class="row justify-content-start align-items-start g-2">
-                        <x-input col="12" value="" for_name_id="keterangan" content="Keterangan"
+                        <x-input class="" value="" for_name_id="keterangan" content="Keterangan"
                             type="text" placeholder="Keterangan" />
                     </div>
                     @error('keterangan')
@@ -27,7 +27,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="close" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                    <button type="submit" class="btn btn-primary" id="btn-edit">Simpan</button>
+                    <button type="submit" class="btn btn-primary">Simpan</button>
                 </div>
             </form>
         </div>

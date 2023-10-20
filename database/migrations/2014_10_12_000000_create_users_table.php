@@ -15,16 +15,26 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('role');
-            $table->string('name');
+            $table->string('referal', 6)->nullable();
+            $table->enum('role', ['admin', 'koordinator', 'anggota']);
+            $table->string('nama');
             $table->string('email')->unique();
             $table->string('password');
-            $table->bigInteger('phone')->nullable();
-            $table->string('location')->nullable();
+            $table->string('nik', 16)->unique();
+            $table->enum('jenis_kelamin', ['(L)', '(P)']);
+            $table->string('agama');
+            $table->string('suku');
+            $table->string('telepon', 15)->nullable();
+            $table->foreignId('kelurahan')->constrained('villages')->cascadeOnDelete();
+            $table->string('alamat');
+            $table->string('rt', 3)->nullable();
+            $table->string('rw', 3)->nullable();
+            $table->string('tps', 4)->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
     }
+    
 
     /**
      * Reverse the migrations.

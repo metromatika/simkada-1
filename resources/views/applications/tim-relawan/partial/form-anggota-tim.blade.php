@@ -6,7 +6,8 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form>
+                <form method="POST" action="{{ route('create-anggota') }}">
+                    @csrf
                     <div class="mb-3">
                         <label for="nama_anggota" class="form-label">Nama Anggota</label>
                         <input type="text" class="form-control" name="nama_anggota" id="nama_anggota"
@@ -88,8 +89,8 @@
                         <select class="form-select" name="jenis_kelamin" id="jenis_kelamin"
                             aria-label="Pilih Jenis Kelamin">
                             <option selected>Pilih Jenis Kelamin...</option>
-                            <option value="Laki-laki">Laki-laki</option>
-                            <option value="Perempuan">Perempuan</option>
+                            <option value="L">Laki-laki</option>
+                            <option value="P">Perempuan</option>
                         </select>
                     </div>
                     <div class="row justify-content-center align-items-center g-2">
@@ -119,8 +120,8 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                <button type="button" class="btn btn-primary">Simpan</button>
+                <button type="close" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                <button type="submit" class="btn btn-primary">Simpan</button>
             </div>
         </div>
     </div>

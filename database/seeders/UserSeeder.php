@@ -18,7 +18,8 @@ class UserSeeder extends Seeder
         DB::table('users')->insert([
             'id' => 1,
             'role' => 'admin',
-            'name' => 'Albert Lukas Talupan Pangaribuan',
+            'referal' => 'AAAAAA',
+            'nama' => 'Albert Lukas Talupan Pangaribuan',
             'email' => 'albertlukastalupan1@students.usu.ac.id',
             'password' => Hash::make('albert123'),
             'created_at' => now(),

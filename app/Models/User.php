@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use App\Models\Village;
 
 class User extends Authenticatable
 {
@@ -18,12 +19,21 @@ class User extends Authenticatable
      * @var string[]
      */
     protected $fillable = [
+        'referal',
         'role',
-        'name',
+        'nama',
         'email',
         'password',
-        'phone',
-        'location',
+        'nik',
+        'jenis_kelamin',
+        'agama',
+        'suku',
+        'telepon',
+        'kelurahan',
+        'alamat',
+        'rt',
+        'rw',
+        'tps',
     ];
 
     /**
@@ -44,5 +54,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    public function village()
+    {
+        return $this->belongsTo(Village::class, 'kelurahan');
+    }
 
 }

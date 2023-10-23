@@ -39,6 +39,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     //CRUD Daftar Tim
     Route::post('/tim-relawan/daftar-tim/create', [TimRelawanController::class, 'createTim'])->name('create-tim');
+    Route::get('/daftar-tim', [TabelDaftarTim::class]);
 
     //CRUD Daftar Tim
     Route::post('/tim-relawan/personil-relawan/create', [TimRelawanController::class, 'createAnggotaTim'])->name('create-anggota');

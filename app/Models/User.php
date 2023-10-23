@@ -20,6 +20,7 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'referal',
+        'ref_referal',
         'role',
         'nama',
         'email',
@@ -57,6 +58,10 @@ class User extends Authenticatable
     public function village()
     {
         return $this->belongsTo(Village::class, 'kelurahan');
+    }
+    public function refUser()
+    {
+        return $this->belongsTo(User::class, 'ref_referal', 'referal');
     }
 
 }

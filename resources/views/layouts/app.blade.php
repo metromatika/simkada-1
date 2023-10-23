@@ -36,7 +36,10 @@
     class="g-sidenav-show  bg-gray-100 {{ \Request::is('rtl') ? 'rtl' : (Request::is('virtual-reality') ? 'virtual-reality' : '') }} ">
     @auth
         @if (session()->has('success'))
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <div x-data="{ show:true }"
+            x-init="setTimeout(() => show = false, 4000)"
+            x-show="show"
+            class="alert alert-success alert-dismissible fade show bottom-0 start-1 position-fixed" role="alert">
                 <span class="alert-icon"><i class="ni ni-like-2"></i></span>
                 <span class="alert-text"><strong>Success!</strong> {{ session('success') }} </span>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">

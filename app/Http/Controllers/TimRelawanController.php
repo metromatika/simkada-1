@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\DaftarTim;
-use App\Models\AnggotaTim;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
+use Illuminate\Support\Str;
 
 class TimRelawanController extends Controller
 {
@@ -25,34 +27,30 @@ class TimRelawanController extends Controller
         // dd($tim);
         return redirect()->back()->with('success', 'Tim Berhasil ditambah!');
     }
-    public function createAnggotaTim(Request $request)
+    public function createAnggotaTim()
     {
-        // $request->validate([
-        //     'nama_anggota'=>'required',
-        //     'referal_tim'=>'required',
-        //     'nik'=>'required',
-        //     'no_hp'=>'required',
-        //     'direkrut_oleh'=>'required',
-        //     'tanggal_lahir'=>'required',
-        //     'keterangan'=>'required',
-        //     'agama'=>'required',
-        //     'suku'=>'required',
-        //     'alamat'=>'required',
-        // ]);
+        $attributes = request()->validate([
+            'role' => ['required'],
+            'ref_referal' => ['nullable', 'string', 'max:6'],
+            'nama' => ['required', 'max:50'],
+            'email' => ['required', 'email', 'max:50', Rule::unique('users', 'email')],
+            'password' => ['required', 'min:5', 'max:20'],
+            'nik' => ['required', 'string', 'max:16', Rule::unique('users', 'nik')],
+            'jenis_kelamin' => ['required'],
+            'agama' => ['required', 'string'],
+            'suku' => ['required', 'string'],
+            'telepon' => ['nullable', 'string', 'max:15'],
+            'kelurahan' => ['required'],
+            'alamat' => ['required', 'string'],
+            'rt' => ['nullable', 'string', 'max:3'],
+            'rw' => ['nullable', 'string', 'max:3'],
+            'tps' => ['nullable', 'string', 'max:4'],
+        ]);
 
-        $anggota_tim = new DaftarTim();
-        $anggota_tim->nama_anggota = $request->nama_anggota;
-        $anggota_tim->referal_tim = $request->referal_tim;
-        $anggota_tim->nik = $request->nik;
-        $anggota_tim->no_hp = $request->no_hp;
-        $anggota_tim->direkrut_oleh = $request->direkrut_oleh;
-        $anggota_tim->tanggal_lahir = $request->tanggal_lahir;
-        $anggota_tim->keterangan = $request->keterangan;
-        $anggota_tim->agama = $request->agama;
-        $anggota_tim->suku = $request->suku;
-        $anggota_tim->alamat = $request->alamat;
-        $anggota_tim->save();
-
+        $attributes['password'] = bcrypt($attributes['password'] );
+        $attributes['referal'] = strtoupper(Str::random(6));
+        // dd($attributes);
+        $user = User::create($attributes);
         return redirect()->back()->with('success', 'Anggota berhasil ditambah!');
     }
 }

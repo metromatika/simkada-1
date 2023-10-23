@@ -5152,6 +5152,7 @@ textarea.form-control-lg {
 
 .alert-dismissible {
   padding-right: 3rem;
+  z-index: 1000;
 }
 .alert-dismissible .btn-close {
   position: absolute;

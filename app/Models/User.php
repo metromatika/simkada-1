@@ -8,6 +8,8 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use App\Models\Village;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class User extends Authenticatable
 {
@@ -59,9 +61,12 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Village::class, 'kelurahan');
     }
-    public function refUser()
+    public function koordinator(): HasMany
     {
-        return $this->belongsTo(User::class, 'ref_referal', 'referal');
+        return $this->hasMany(User::class, 'referal', 'ref_referal');
     }
-
+    public function anggotaTim(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'referal', 'ref_referal');
+    }
 }

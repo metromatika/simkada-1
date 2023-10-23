@@ -11,6 +11,8 @@ use App\Http\Controllers\MasterDataController;
 use App\Http\Controllers\TimRelawanController;
 use App\Http\Livewire\TabelDataTPS;
 use App\Http\Livewire\DataJumlahDpt;
+use App\Http\Livewire\TabelDaftarTim;
+use App\Http\Livewire\TabelDaftarAnggota;
 use Illuminate\Support\Facades\Route;
 
 Route::group(['middleware' => 'auth'], function () {
@@ -43,7 +45,8 @@ Route::group(['middleware' => 'auth'], function () {
 
     //CRUD Daftar Tim
     Route::post('/tim-relawan/personil-relawan/create', [TimRelawanController::class, 'createAnggotaTim'])->name('create-anggota');
-    
+    Route::get('/personil-relawan', [TabelDaftarAnggota::class]);
+
 	Route::get('dashboard', function () {
 		return view('applications/dashboard');
 	})->name('dashboard');

@@ -17,7 +17,7 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('referal', 6)->nullable();
             $table->string('ref_referal', 6)->nullable();
-            $table->enum('role', ['admin', 'koordinator', 'anggota']);
+            $table->enum('role', ['Admin', 'Koordinator', 'Anggota', 'Saksi']);
             $table->string('nama');
             $table->string('email')->unique();
             $table->string('password');

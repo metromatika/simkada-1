@@ -57,6 +57,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    // public function query()
+    // {
+    //     return User::where('role', 'Saksi');
+    // }
+
     public function village()
     {
         return $this->belongsTo(Village::class, 'kelurahan');

@@ -682,16 +682,16 @@
             </li>
         </ul>
     </div>
-    <div class="sidenav-footer mx-3 ">
-        <div class="card card-background shadow-none card-background-mask-secondary" id="sidenavCard">
+    <div class="sidenav-footer mx-3 mt-2">
+        <div class="card card-background shadow-none card-background-mask-dark" id="sidenavCard">
             <div class="full-background"
                 style="background-image: url('../assets/img/curved-images/white-curved.jpeg')"></div>
             <div class="card-body d-flex align-items-center justify-content-between p-1">
                 <div class="me-7 mt-2">
-                    <h6 class="text-white up">DINSOS</h6>
-                    <p class="text-xs font-weight-bold text-white">Admin</p>
+                    <h6 class="text-white">{{ explode(' ', auth()->user()->nama)[0] }}</h6>
+                    <p class="text-xs font-weight-bold text-white">{{ auth()->user()->role }}</p>
                 </div>
-                <a href="/logout" class="">
+                <a href="/logout" class="" data-bs-toggle="tooltip" data-bs-original-title="Log Out">
                     <i class="ni ni-button-power text-danger font-weight-bold text-gradient text-lg top-0"></i>
                 </a>
             </div>

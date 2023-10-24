@@ -5,11 +5,11 @@ namespace App\Http\Livewire;
 use LaravelViews\Views\TableView;
 use App\Models\User;
 use LaravelViews\Facades\Header;
+use Illuminate\Database\Eloquent\Builder;
 use LaravelViews\Facades\UI;
-use LaravelViews\Views\Traits\WithAlerts;
 use App\Actions\DeleteAction;
 
-class TabelDaftarAnggota extends TableView
+class TabelDataSaksi extends TableView
 {
     /**
      * Sets a model class to get the initial data
@@ -31,8 +31,8 @@ class TabelDaftarAnggota extends TableView
             'Referal',
             'NIK',
             'No. HP',
-            'Direkrut oleh',
-            'Aksi'
+            'Tanggal Pendaftaran',
+            'Aksi',
         ];
     }
 
@@ -43,15 +43,13 @@ class TabelDaftarAnggota extends TableView
      */
     public function row($model): array
     {
-        $koordinator = $model->koordinator;
-        $namaKoordinator = $koordinator->isEmpty() ? 'Bukan Anggota' : $koordinator->pluck('nama')->implode(', ');
         return [
             $model->nama,
             $model->village->name,
             $model->referal,
             $model->nik,
             $model->telepon,
-            $namaKoordinator,
+            $model->created_at->diffForHumans(),
         ];
     }
     protected function actionsByRow()

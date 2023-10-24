@@ -19,6 +19,13 @@ return new class extends Migration
             $table->integer('dpt_jumlah');
             $table->timestamps();
         });
+        DB::unprepared('
+        CREATE TRIGGER calculate_dpt_jumlah BEFORE UPDATE ON jumlah_dpt
+        FOR EACH ROW
+        BEGIN
+            SET NEW.dpt_jumlah = NEW.dpt_l + NEW.dpt_p;
+        END;
+    ');
     }
 
     /**
@@ -26,6 +33,7 @@ return new class extends Migration
      */
     public function down(): void
     {
+        DB::unprepared('DROP TRIGGER IF EXISTS calculate_dpt_jumlah');
         Schema::dropIfExists('jumlah_dpt');
     }
 };

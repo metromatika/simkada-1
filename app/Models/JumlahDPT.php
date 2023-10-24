@@ -14,7 +14,7 @@ class JumlahDPT extends Model
     protected $fillable = [
         'village_id',
         'dpt_l',
-        'dpt_l',
+        'dpt_p',
         'jumlah_dpt',
     ];
     public function village() {
